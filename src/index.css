@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-sky: #A9DCE8;
+  --color-sky-light: #EAF7F8;
+  --color-navy: #153B58;
+  --color-cream: #FFF9F0;
+  --color-coral: #F29A83;
+  --color-mint: #BFE3D1;
+  --color-body: #3F4B53;
+  --color-muted: #77838A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-body);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #A9DCE8;
+    color: #153B58;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF9F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBE6EE;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A9DCE8;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Cloud / Scallop border shape helper */
+.scallop-mask {
+  mask-image: radial-gradient(circle, black 70%, transparent 71%);
+}
